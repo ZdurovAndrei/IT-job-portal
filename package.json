@@ -1,0 +1,17 @@
+{
+  "name": "simple-server",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "request": "~2.69.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "should": "^8.3.0",
+    "supertest": "^1.2.0"
+  }
+}
