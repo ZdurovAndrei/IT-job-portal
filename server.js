@@ -1,5 +1,4 @@
 var http = require("http");
-var config = require('./config/config.json');
 
 function start(route, handle){
 
@@ -7,7 +6,7 @@ function start(route, handle){
         res.writeHead(200, {'Content-Type': 'application/json; charset=utf-8'});
         route(handle, req ,res);
     }
-    http.createServer(onRequest).listen(config);
+    http.createServer(onRequest).listen(3000);
 }
 console.log('Server is running');
 
