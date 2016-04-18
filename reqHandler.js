@@ -4,6 +4,7 @@ var message = "No Content ";
 parser.getData(function (err, result) {
     if (err) {
         console.log(err.message);
+        next();
     }
     else {
         message = result;
