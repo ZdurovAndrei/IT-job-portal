@@ -1,7 +1,5 @@
 var request = require("request");
 var cheerio = require('cheerio');
-var Config = require('./tsconfig');
-
 //var timerId = setInterval(function() {
 
 Url = "http://www.015.by/job/vacancy/1";
@@ -19,7 +17,7 @@ var getLinks = function(callback) {
         } else {
             console.log(error);
         }
-        // callback(null, getLinks());
+        callback(null, Data);
     });
 };
 
@@ -37,7 +35,6 @@ function getInfo() {
     if (Data.length === 0) {
         return;
     }
-    console.log('Запрос: ' + Data.length);
     var next = Data.shift();
 
     pageInfo.push({link: next.link});
@@ -63,6 +60,3 @@ function makeRequest(url, callback) {
         callback();
     });
 }
-
-
-//}, Config.Time);

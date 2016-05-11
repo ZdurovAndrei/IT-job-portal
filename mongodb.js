@@ -23,7 +23,7 @@ var async = require('async'),tasksIndex = [
         });
     }
     ,function(callback){
-        parser.getData(function(errData, resultData) {
+        parser.getLinks(function(errData, resultData) {
            for(var i = 0; i < resultData.length; i++) {
                var linksb = new Link({
                    link: resultData[i].link
@@ -44,23 +44,3 @@ async.series(tasksIndex, function(err, result){
         result[2];
     }
 });
-
-//Чтение из базы
-
-//Вывод однго блока
-//Title.collection.findOne({result : String}, function(err, document) {
-    //console.log(document.titleArticle + '\n' + document.subArticle + '\n' + document.link);
-//});
-//Вывод всей информации
-// Title.find({result : String}, function(err, document) {
-//     try {
-//         console.log("Links: \n");
-//         for (var i = 0; i < 19; i++) {
-//             //console.log(document[i].link);
-//         }
-//     }
-//     catch(err){
-//         console.log("No Titles");
-//     }
-// });
-//}, Config.Time);
